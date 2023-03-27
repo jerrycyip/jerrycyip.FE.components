@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- regex for username: https://stackoverflow.com/questions/34292024/regular-expression-vs-vs-none -->
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>Signup Form</title>
+  </head>
+  <body>
+    <div class="signup-form-wrapper">
+      <form>
+        <div>
+          <label for="username">Username</label>
+        <input 
+          id="username-input" 
+          name="username" 
+          required
+          type="text"
+          minlength="4"
+          pattern="^[a-zA-Z0-9]+$"
+        />
+        </div>
+        <div>
+          <label for="email-input">Email</label>
+          <input 
+            id="email-input" 
+            name="email"
+            required 
+            type="email"
+          />
+        </div>
+        <div>
+          <label for="password-input">Password</label>
+          <input 
+          id="password-input" 
+          name="password"
+          required 
+          type="password" 
+          minlength="6"
+          />
+        </div>
+        <div>
+          <label for="password-confirm-input">
+            Confirm Password
+            </label>
+          <input 
+            id="password-confirm-input" 
+            name="password_confirm" 
+            required
+            type="password" 
+            minlength="6"
+            aria-describedby="password-mismatch-error" />
+          <div
+            class="error hidden"
+            id="password-mismatch-error">
+            The passwords do not match
+          </div>
+        </div>
+        <div>
+          <button type="submit">Sign Up</button>
+        </div>
+      </form>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>

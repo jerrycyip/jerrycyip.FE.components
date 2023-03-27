@@ -1,0 +1,33 @@
+body {
+  font-family: sans-serif;
+}
+
+
+/* center the clock horizontally */
+.wrapper {
+/* flex item's width defaults to content width vs div's (block elem) width defaults to fill width of parent container */  
+  display: flex; 
+  justify-content: center; /* centers clock */
+  align-items: center; /* isn't necessary */
+}
+
+.analog-clock {
+  display: block; /* ensure block display */
+  position: relative; /* ensure child elements are overlayed via absolute position */
+  box-sizing: content-box;
+  width: var(--size); /* parameterize size for configurability*/
+  height: var(--size);
+  border-radius: 100%; /* 100% for circle */
+  border: 8px solid #aaa; /* medium grey; alt use #ccc for silver */
+  transform: rotate(180deg); /* make hands pt upwards when starting @ 0 degrees vs downward by default*/
+}
+
+.clock-hand {
+  background-color: #aaa;
+  position: absolute; /* s.t. hands all start overlapped fr center of clock */
+  width: 2px;
+  height: calc(var(--size) / 2); /* param: default lgth/ht 1/2 of clock radius */
+  left: calc(var(--size) / 2); /* cntrd fr lft 1/2 of clock radius */
+  top: calc(var(--size) / 2); /* cntrd dwn fr top 1/2 of clock radius */
+  transform-origin: top center; /* sets the origin for element's transformations */
+}

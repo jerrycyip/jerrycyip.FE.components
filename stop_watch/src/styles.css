@@ -1,0 +1,48 @@
+body {
+  font-family: sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.time {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+.time-inner {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.time-cover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.time-number {
+  font-size: 62px;
+}
+
+.time-number--small {
+  font-size: 36px;
+}
+
+.time-unit {
+  font-size: 24px;
+}
+
+.button-container {
+  display: flex;
+  gap: 16px;
+}
+

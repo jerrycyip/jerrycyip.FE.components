@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles.css"/>
+    <title>Progress Bar</title>
+  </head>
+  <body>
+    <main>
+      <div class="progress-wrapper">
+        <div>
+        <label for="slider">Control Progress</label>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="50"
+            id="slider"
+            />
+        </div>
+        <div id="progress-slider"></div>
+      </div>
+    </main>
+    <script src="src/index.js"></script>
+  </body>
+</html>

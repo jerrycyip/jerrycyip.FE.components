@@ -1,0 +1,18 @@
+body {
+  font-family: sans-serif;
+}
+
+.contact-form-wrapper form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+.contact-form-wrapper label {
+  font-size: 12px;
+}
+
+.contact-form-wrapper input,
+.contact-form-wrapper textarea {
+  display: block;
+}

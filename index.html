@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="./src/styles.css" />      
+    <link rel="stylesheet" href="./holy_grail/src/styles.css" />
+    <link rel="stylesheet" href="./digital_clock/src/styles.css" />
+    <link rel="stylesheet" href="./analog_clock/src/styles.css" />
+    <link rel="stylesheet" href="./stop_watch/src/styles.css" />
+    <link rel="stylesheet" href="./like_button/src/styles.css" />           
+    <link rel="stylesheet" href="./star_rating/src/styles.css" />
+    <link rel="stylesheet" href="./progress_bar/src/styles.css" />
+    <link rel="stylesheet" href="./tweet/src/styles.css" />    
+    <link rel="stylesheet" href="./todo_list/src/styles.css" />
+    <link rel="stylesheet" href="./temp_converter/src/styles.css" />
+    <link rel="stylesheet" href="./traffic_light/src/styles.css" />            
+    <link rel="stylesheet" href="./tabs_II/src/styles.css" />
+    <link rel="stylesheet" href="./accordion II/src/styles.css" />
+    <link rel="stylesheet" href="./signup_form/src/styles.css" />
+    <link rel="stylesheet" href="./contact_form/src/styles.css" />    
+    <title>FrontEnd Sample Page</title>
+  </head>
+  <body>
+    <header>
+      <h1>Demo Site (Header)</h1>
+      <h4>Demo 'Holy Grail' css layout comprising: header, footer, and three columns</h4>
+    </header>
+    <div class="columns">
+      <nav>
+        <h3>Nav</h3>
+      </nav>
+      <main>
+        <h1>Main</h1>
+        <section id="first-section" class="topic-wrapper">         
+          <section>
+            <h2>Stopwatch Demo</h2>
+            <div class="wrapper">
+              <div id="stopwatch"></div>
+            </div>
+          </section>          
+          <section>
+            <h2>Digital Clock Demo</h2>
+            <div class="wrapper">
+              <div id="digital-clock"></div>
+            </div>
+          </section>
+          <section>
+            <h2>Analog Clock Demo</h2>
+            <div class="wrapper">
+              <div id="analog-clock"></div>
+            </div>
+          </section>           
+      </section>
+      <section class="topic-wrapper">
+        <section>
+          <h2>Star Rating Demo</h2>
+            <p>
+              <strong>Hover > click on rating</strong>
+            </p>
+            <div class="star-rating-wrapper">
+              <div id="star-rating"></div>
+              <div id="star-rating-2"></div>
+            </div>
+        </section>
+        <section>
+          <h2>Progress Bar Demo</h2>
+            <div class="progress-wrapper">
+              <div>
+                  <label for="slider"><strong>Control Progress</strong></label>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="50"
+                  id="slider"
+                  />
+                </div>
+              <div id="progress-slider"></div>
+          </div>
+        </section> 
+        <section>
+          <h2>Traffic Light Demo</h2>
+          <div class="traffic-light-wrapper">
+            <div id="traffic-light"></div>
+            <div id="traffic-light-2"></div>
+          </div>
+        </section>      
+      </section> 
+      <section class="topic-wrapper">
+        <section>
+          <h2>To-do List Demo</h2>
+          <div class="todo-list-wrapper">
+            <div>
+              <form id='form'>
+                <input 
+                  aria-label="Add new task" 
+                  id="input" 
+                  type="text"     
+                  placeholder="Add your task" />
+                <div>
+                  <button id="submit">Submit</button>
+                </div>
+              </form>
+            </div>
+            <ul id="todo-list"></ul>
+            <template id="task-template">
+              <li>
+                <span></span>
+                <button>Delete</button>
+              </li>
+            </template>
+          </div>  
+        </section>
+        <section>
+          <h2>Temperature Converter Demo</h2>
+          <div class="temperature-converter">
+            <div class="temp-box">
+              <input id="fahrenheit-input"/>
+              <label for="fahrenheit-input">Fahrenheit</label>        
+            </div>
+            <span class="temp-top-row">=</span>
+            <div class="temp-box">
+              <input id="celsius-input"/>
+              <label for="celsius-input">Celsius</label>        
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>Like Button Demo</h2>
+          <div class="column-wrapper">
+            <div class="button-container">
+              <button id="like-button"></button>
+            </div>
+            <div class="error-message"></div>
+            <div>
+              <p>Demo <em>graceful</em> handling of success / failure cases: <br> ~50% success rate for backend API (HTTP 204 / 500) </p>
+            </div>
+          </div>
+        </section>         
+      </section>       
+      <section>
+        <h2>Tweet Demo</h2>
+        <div class="tweet-list">
+          <div class="tweet">
+            <img
+            class="tweet-author-thumbnail"
+            src="https://xsgames.co/randomusers/avatar.php?g=male" />
+            <article >
+              <div class="tweet-top-row">
+                <span class="tweet-author-name">John Doe</span>
+                <div class="tweet-author-meta">
+                  <span class="handle">@johndoe</span>
+                  <span>&middot</span>
+                  <span class="date">Dec 25</span>
+                </div>
+              </div>
+              <div class="tweet-content">I got my wife a fridge for Christmas.  I can't wait to see her face light up when she opens it.
+              </div>
+              <div class="tweet-actions">
+              <div class="tweet-action">
+                <svg class="tweet-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <g>
+                    <path
+                      d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z"></path>
+                  </g>
+                </svg>
+                <span class="count">1,094</span>
+              </div>
+              <div class="tweet-action">
+                <svg class="tweet-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <g>
+                    <path
+                        d="M23.77 15.67c-.292-.293-.767-.293-1.06 0l-2.22 2.22V7.65c0-2.068-1.683-3.75-3.75-3.75h-5.85c-.414 0-.75.336-.75.75s.336.75.75.75h5.85c1.24 0 2.25 1.01 2.25 2.25v10.24l-2.22-2.22c-.293-.293-.768-.293-1.06 0s-.294.768 0 1.06l3.5 3.5c.145.147.337.22.53.22s.383-.072.53-.22l3.5-3.5c.294-.292.294-.767 0-1.06zm-10.66 3.28H7.26c-1.24 0-2.25-1.01-2.25-2.25V6.46l2.22 2.22c.148.147.34.22.532.22s.384-.073.53-.22c.293-.293.293-.768 0-1.06l-3.5-3.5c-.293-.294-.768-.294-1.06 0l-3.5 3.5c-.294.292-.294.767 0 1.06s.767.293 1.06 0l2.22-2.22V16.7c0 2.068 1.683 3.75 3.75 3.75h5.85c.414 0 .75-.336.75-.75s-.337-.75-.75-.75z"></path>
+                  </g>
+                </svg>
+                <span class="count">5</span>
+              </div>
+              <div class="tweet-action">
+                <svg class="tweet-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <g>
+                    <path
+                      d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z"></path>
+                  </g>
+                </svg>
+                <span class="count">8,402</span>
+              </div>
+              <div class="tweet-action">
+                <svg class="tweet-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <g>
+                    <path
+                      d="M17.53 7.47l-5-5c-.293-.293-.768-.293-1.06 0l-5 5c-.294.293-.294.768 0 1.06s.767.294 1.06 0l3.72-3.72V15c0 .414.336.75.75.75s.75-.336.75-.75V4.81l3.72 3.72c.146.147.338.22.53.22s.384-.072.53-.22c.293-.293.293-.767 0-1.06z"></path>
+                    <path
+                      d="M19.708 21.944H4.292C3.028 21.944 2 20.916 2 19.652V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 .437.355.792.792.792h15.416c.437 0 .792-.355.792-.792V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 1.264-1.028 2.292-2.292 2.292z"></path>
+                  </g>
+                </svg>
+              </div>
+              </div>
+            </article>
+          </div>
+          <div class="tweet">
+              <img
+                class="tweet-author-thumbnail"
+                src="https://xsgames.co/randomusers/avatar.php?g=female" />
+              <div>
+                <div class="tweet-top-row">
+                  <span class="tweet-author-name">Jane Doe</span>
+                  <span class="tweet-author-meta">
+                    @janedoe &middot; Oct 24
+                  </span>
+                </div>
+                <div class="tweet-content">
+                  I told my husband that he has no sense of
+                  direction at all. He got so mad that he packed
+                  up his stuff and right.
+                </div>
+                <div class="tweet-actions">
+                  <div class="tweet-action">
+                    <svg
+                      class="tweet-icon"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true">
+                      <g>
+                        <path
+                          d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z"></path>
+                      </g>
+                    </svg>
+                    <span class="count">193</span>
+                  </div>
+                  <div class="tweet-action">
+                    <svg
+                      class="tweet-icon"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true">
+                      <g>
+                        <path
+                          d="M23.77 15.67c-.292-.293-.767-.293-1.06 0l-2.22 2.22V7.65c0-2.068-1.683-3.75-3.75-3.75h-5.85c-.414 0-.75.336-.75.75s.336.75.75.75h5.85c1.24 0 2.25 1.01 2.25 2.25v10.24l-2.22-2.22c-.293-.293-.768-.293-1.06 0s-.294.768 0 1.06l3.5 3.5c.145.147.337.22.53.22s.383-.072.53-.22l3.5-3.5c.294-.292.294-.767 0-1.06zm-10.66 3.28H7.26c-1.24 0-2.25-1.01-2.25-2.25V6.46l2.22 2.22c.148.147.34.22.532.22s.384-.073.53-.22c.293-.293.293-.768 0-1.06l-3.5-3.5c-.293-.294-.768-.294-1.06 0l-3.5 3.5c-.294.292-.294.767 0 1.06s.767.293 1.06 0l2.22-2.22V16.7c0 2.068 1.683 3.75 3.75 3.75h5.85c.414 0 .75-.336.75-.75s-.337-.75-.75-.75z"></path>
+                      </g>
+                    </svg>
+                    <span class="count">3,960</span>
+                  </div>
+                  <div class="tweet-action">
+                    <svg
+                      class="tweet-icon"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true">
+                      <g>
+                        <path
+                          d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z"></path>
+                      </g>
+                    </svg>
+                    <span class="count">40.5K</span>
+                  </div>
+                  <div class="tweet-action">
+                    <svg
+                      class="tweet-icon"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true">
+                      <g>
+                        <path
+                          d="M17.53 7.47l-5-5c-.293-.293-.768-.293-1.06 0l-5 5c-.294.293-.294.768 0 1.06s.767.294 1.06 0l3.72-3.72V15c0 .414.336.75.75.75s.75-.336.75-.75V4.81l3.72 3.72c.146.147.338.22.53.22s.384-.072.53-.22c.293-.293.293-.767 0-1.06z"></path>
+                        <path
+                          d="M19.708 21.944H4.292C3.028 21.944 2 20.916 2 19.652V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 .437.355.792.792.792h15.416c.437 0 .792-.355.792-.792V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 1.264-1.028 2.292-2.292 2.292z"></path>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+                  <div class="tweet">
+            <img
+              class="tweet-author-thumbnail"
+              src="https://xsgames.co/randomusers/avatar.php?g=pixel" />
+            <div>
+              <div class="tweet-top-row">
+                <span class="tweet-author-name">WALL-E</span>
+                <span class="tweet-author-meta">
+                  @walle &middot; Jul 1
+                </span>
+              </div>
+              <div class="tweet-content">
+                The best way to predict the future is to invent
+                it.
+              </div>
+              <div class="tweet-actions">
+                <div class="tweet-action">
+                  <svg
+                    class="tweet-icon"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true">
+                    <g>
+                      <path
+                        d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z"></path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="tweet-action">
+                  <svg
+                    class="tweet-icon"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true">
+                    <g>
+                      <path
+                        d="M23.77 15.67c-.292-.293-.767-.293-1.06 0l-2.22 2.22V7.65c0-2.068-1.683-3.75-3.75-3.75h-5.85c-.414 0-.75.336-.75.75s.336.75.75.75h5.85c1.24 0 2.25 1.01 2.25 2.25v10.24l-2.22-2.22c-.293-.293-.768-.293-1.06 0s-.294.768 0 1.06l3.5 3.5c.145.147.337.22.53.22s.383-.072.53-.22l3.5-3.5c.294-.292.294-.767 0-1.06zm-10.66 3.28H7.26c-1.24 0-2.25-1.01-2.25-2.25V6.46l2.22 2.22c.148.147.34.22.532.22s.384-.073.53-.22c.293-.293.293-.768 0-1.06l-3.5-3.5c-.293-.294-.768-.294-1.06 0l-3.5 3.5c-.294.292-.294.767 0 1.06s.767.293 1.06 0l2.22-2.22V16.7c0 2.068 1.683 3.75 3.75 3.75h5.85c.414 0 .75-.336.75-.75s-.337-.75-.75-.75z"></path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="tweet-action">
+                  <svg
+                    class="tweet-icon"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true">
+                    <g>
+                      <path
+                        d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z"></path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="tweet-action">
+                  <svg
+                    class="tweet-icon"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true">
+                    <g>
+                      <path
+                        d="M17.53 7.47l-5-5c-.293-.293-.768-.293-1.06 0l-5 5c-.294.293-.294.768 0 1.06s.767.294 1.06 0l3.72-3.72V15c0 .414.336.75.75.75s.75-.336.75-.75V4.81l3.72 3.72c.146.147.338.22.53.22s.384-.072.53-.22c.293-.293.293-.767 0-1.06z"></path>
+                      <path
+                        d="M19.708 21.944H4.292C3.028 21.944 2 20.916 2 19.652V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 .437.355.792.792.792h15.416c.437 0 .792-.355.792-.792V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 1.264-1.028 2.292-2.292 2.292z"></path>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div> 
+      </section>              
+        <section>
+          <h2>Tabs Demo</h2>
+          <div class="tabs-wrapper">
+              <div id="tabs"></div>
+          </div>
+        </section>
+        <section>
+          <h2>Accordion Demo</h2>
+          <div class=""accordion-wrapper>
+            <div id="accordion"></div>
+          </div>
+        </section>
+        <section class="topic-wrapper">         
+          <section>
+            <h2>Signup Form Demo</h2>
+            <div class="signup-form-wrapper">
+              <form>
+                <div>
+                  <label for="username">Username</label>
+                <input 
+                  id="username-input" 
+                  name="username" 
+                  required
+                  type="text"
+                  minlength="4"
+                  pattern="^[a-zA-Z0-9]+$"
+                />
+                </div>
+                <div>
+                  <label for="email-input">Email</label>
+                  <input 
+                    id="email-input" 
+                    name="email"
+                    required 
+                    type="email"
+                  />
+                </div>
+                <div>
+                  <label for="password-input">Password</label>
+                  <input 
+                  id="password-input" 
+                  name="password"
+                  required 
+                  type="password" 
+                  minlength="6"
+                  />
+                </div>
+                <div>
+                  <label for="password-confirm-input">
+                    Confirm Password
+                    </label>
+                  <input 
+                    id="password-confirm-input" 
+                    name="password_confirm" 
+                    required
+                    type="password" 
+                    minlength="6"
+                    aria-describedby="password-mismatch-error" />
+                  <div
+                    class="error hidden"
+                    id="password-mismatch-error">
+                    The passwords do not match
+                  </div>
+                </div>
+                <div>
+                  <button type="submit">Sign Up</button>
+                </div>
+              </form>
+              </div>
+          </section>
+          <section>
+            <h2>Contact Form Demo</h2>
+            <div class="contact-form-wrapper">
+              <form
+              action="https://www.greatfrontend.com/api/questions/contact-form"
+              method="post"
+              >
+                <div>
+                  <!-- a11y: associate labels to inputs via corresponding 'for'/'id' attribute vals -->
+                  <!-- so that clicking on the label will focus on the corresponding input. -->
+                  <!-- Avoid nesting inputs inside of labels as some assistive tech (e.g. Dragon NaturallySpeaking) doesn't support it -->
+                  <label for="name-input">Name</label>
+                  <!-- Form fields with the name attribute will have the attribute value become the key in the form data -->
+                  <input id="name-input" name="name" type="text" />
+                </div>
+                <div>
+                  <label for="email-input">Email</label>
+                  <input id="email-input" name="email" type="text" />
+                </div>
+                <div>
+                  <label for="message-input">Message</label>
+                  <textarea id="message-input" name="message" type="textbox"></textarea>
+                </div>
+                <div>
+                  <button>Send</button>
+                </div>
+              </form>
+            </div>
+          </section>
+        </section>
+      </main>
+      <aside>
+        <h3>Sidebar</h3>
+      </aside>
+    </div>
+    <footer>
+      <h3>Footer</h3>
+      <p><strong>https://www.linkedin.com/in/jerrycyip/</strong></p>
+    </footer>
+    <script src="./digital_clock/src/index.js"></script>
+    <script src="./analog_clock/src/index.js"></script>
+    <script src="./stop_watch/src/index.js"></script>
+    <script src="./like_button/src/index.js"></script>        
+    <script src="./star_rating/src/index.js"></script>
+    <script src="./progress_bar/src/index.js"></script>
+    <script src="./todo_list/src/index.js"></script>
+    <script src="./temp_converter/src/index.js"></script>
+    <script src="./traffic_light/src/index.js"></script>     
+    <script src="./tabs_II/src/index.js"></script>
+    <script src="./accordion II/src/index.js"></script>
+    <script src="./signup_form/src/index.js"></script>
+  <body>
+</html>

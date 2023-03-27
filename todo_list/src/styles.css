@@ -1,0 +1,12 @@
+.todo-list-wrapper {
+  text-align: left;
+  max-width: 30vw;
+}
+
+.todo-list-wrapper #submit {
+  margin-top: 0.5rem;
+}
+
+.todo-list-wrapper li {
+  margin-bottom: 0.5rem;
+}

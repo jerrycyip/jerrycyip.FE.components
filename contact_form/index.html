@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en-US">
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>Contact Form</title>
+  </head>
+  <body>
+     <!-- (basic) Forms and form submissions can entirely be built without any JavaScript -->
+     <div class="contact-form-wrapper">
+      <form
+        action="https://www.greatfrontend.com/api/questions/contact-form"
+        method="post"
+      >
+      <div>
+        <!-- a11y: associate labels to inputs via corresponding 'for'/'id' attribute vals -->
+        <!-- so that clicking on the label will focus on the corresponding input. -->
+        <!-- Avoid nesting inputs inside of labels as some assistive tech (e.g. Dragon NaturallySpeaking) don't support it -->
+        <label for="name-input">Name</label>
+        <!-- Form fields with the name attribute will have the attribute value become the key in the form data -->
+        <input id="name-input" name="name" type="text" />
+      </div>
+      <div>
+        <label for="email-input">Email</label>
+        <input id="email-input" name="email" type="text" />
+      </div>
+      <div>
+        <label for="message-input">Message</label>
+        <textarea id="message-input" name="message" type="textbox"></textarea>
+      </div>
+      <div>
+        <button>Send</button>
+      </div>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+body {
+  font-family: sans-serif;
+}
+
+.signup-form-wrapper form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+
+.signup-form-wrapper label {
+  font-size: 0.8em;
+}
+
+.signup-form-wrapper input {
+  display: block;
+}
+
+.signup-form-wrapper input:focus {
+  outline: 2px solid royalblue;
+  border-radius:  1px;
+}
+
+.signup-form-wrapper .error {
+  color: red;
+  font-size: 0.7em;
+  margin-top: 0.3em;
+}
+
+.signup-form-wrapper .hidden {
+  display: none;
+}
+

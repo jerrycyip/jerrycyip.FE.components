@@ -1,0 +1,112 @@
+body {
+  font-family: sans-serif;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.accordion-item {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  padding: 4px 0px;
+}
+
+.accordion-item:not(:first-child) {
+  border-top: 1px solid #eee;
+}
+
+.accordion-item-title {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 4px;
+}
+
+.accordion-item-title:hover {
+  background: #eee; 
+}
+
+.accordion-icon {
+  border: solid currentcolor;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  height: 8px;
+  pointer-events: none;
+  transform: translateY(-2px) rotate(45deg);
+  width: 8px;
+}
+
+.accordion-icon--rotated {
+  transform: translateY(2px) rotate(-135deg);  
+}
+
+.accordion-item-contents {
+  font-size: 14px;
+  line-height: 1.2em;
+  padding: 4px;
+}
+
+/* not needed */
+/* .wrapper { 
+  display: flex;
+  align-items: center;
+} */
+
+/* simple solution */
+  /* body {
+  font-family: sans-serif;
+}
+
+.container:not(:first-child){
+    border-top: 1px solid #eee;
+}
+
+.accordion-icon {
+  border: solid currentcolor;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  height: 8px;
+  pointer-events: none;
+  transform: translateY(-2px) rotate(45deg);
+  width: 8px;
+}
+
+.accordion-icon--rotated {
+  transform: translateY(2px) rotate(-135deg);  
+}
+
+.label {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;  
+  border: none;
+  width: 100%;
+  background: none;  
+  padding: 4px;
+  text-align: start;
+  align-items: center;
+}
+
+.label:hover,:focus {
+  background-color: #eee;
+}
+
+.content {
+  display: none;
+  padding: 4px;
+}
+
+.content.active {
+  display:block;
+  padding-top: 8px;
+}
+ */

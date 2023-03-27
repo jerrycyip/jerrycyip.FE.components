@@ -1,0 +1,33 @@
+body {
+  font-family: sans-serif;
+}
+
+.traffic-light-wrapper {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center; /* not needed? */
+  align-items: center;
+  gap: 3rem
+}
+
+.traffic-light-container {
+  background-color: #000; /* black background */
+  border-radius: 8px; /* bevelled edges */
+  display: flex;
+  padding: 8px; /* space between lights and edges */
+  gap: 8px; /* space b/w lights */
+  /* width: calc((var(50px) + 8px)* 3); */  /* if we don't use align-items: center for wrapper*/
+}
+
+.traffic-light-container--vertical {
+  flex-direction: column;
+  /* width: 50px; */ /* if we don't use align-items: center for wrapper*/
+}
+
+.traffic-light {
+  --size: 50px; /* config size var */
+  background-color: #555; /* default grey color */
+  border-radius: var(--size); /* circular lights */
+  height: var(--size);
+  width: var(--size);
+}
