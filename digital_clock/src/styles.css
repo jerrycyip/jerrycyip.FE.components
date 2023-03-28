@@ -11,7 +11,7 @@ body {
 /* styling for overall digital clock display */
 .digital-clock {
   --segment-width: 0.4rem; /*8px;*/
-  --segment-size: 1.6rem; /*32px;*/
+  --segment-size: 1.8rem; /*32px;*/
   --segment-color: #fff;
 
   background-color: #000;
