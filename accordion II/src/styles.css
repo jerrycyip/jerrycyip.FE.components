@@ -5,13 +5,13 @@ body {
 .accordion-wrapper {
   align-items: center;
   display: flex;
-  text-align: left;
 }
 
 .accordion {
   display: flex;
   flex-direction: column;
   width: 100%;
+  text-align: left;
 }
 
 .accordion-item {

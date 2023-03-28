@@ -80,6 +80,11 @@ h4 {
     display: none;
   }
 
+
+  .like-button-wrapper {
+    max-width: 90vw;
+  }
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -87,8 +92,5 @@ h4 {
     display: none;
   }
 
-  .like-button-wrapper {
-    max-width: 90vw;
-  }
 
 }
