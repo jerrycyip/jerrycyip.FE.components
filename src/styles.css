@@ -50,7 +50,7 @@ h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 28vw;
+  max-width: 27vw;
 }
 
 .star-rating-wrapper {
