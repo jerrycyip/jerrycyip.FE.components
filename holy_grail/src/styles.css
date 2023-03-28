@@ -1,6 +1,6 @@
 body {
   font-family: sans-serif;
-  font-size: 14px;
+  font-size: 0.85rem; /* 14px; */
   /* font-weight: bold; */
   margin: 0;
   display: flex;
@@ -19,7 +19,7 @@ nav,
 main,
 aside,
 footer {
-  padding: 8px;
+  padding: 1rem; /*8px;*/
   text-align: center;
 }
 
@@ -47,6 +47,8 @@ main {
   display: flex;
   flex-direction: column;
   row-gap: 1.5rem;
+  flex-shrink: 2;
+
 }
 
 aside {

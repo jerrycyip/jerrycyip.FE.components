@@ -26,7 +26,7 @@
   <body>
     <header>
       <h1>Portfolio - Jerry Yip</h1>
-      <h4>Demo 'Holy Grail' css layout comprising: header, footer, and three columns</h4>
+      <h4 class="heading-descriptor">Demo 'Holy Grail' css layout comprising: header, footer, and three columns</h4>
     </header>
     <div class="columns">
       <nav>
@@ -37,19 +37,19 @@
         <section id="first-section" class="topic-wrapper">         
           <section>
             <h2>Stopwatch Demo</h2>
-            <div class="wrapper">
+            <div class="stopwatch-wrapper">
               <div id="stopwatch"></div>
             </div>
           </section>          
           <section>
             <h2>Digital Clock Demo</h2>
-            <div class="wrapper">
+            <div class="digital-clock-wrapper">
               <div id="digital-clock"></div>
             </div>
           </section>
           <section>
             <h2>Analog Clock Demo</h2>
-            <div class="wrapper">
+            <div class="analog-clock-wrapper">
               <div id="analog-clock"></div>
             </div>
           </section>           
@@ -130,7 +130,7 @@
         </section>
         <section>
           <h2>Like Button Demo</h2>
-          <div class="column-wrapper">
+          <div class="like-button-wrapper">
             <div class="button-container">
               <button id="like-button"></button>
             </div>
@@ -438,12 +438,12 @@
         </section>
       </main>
       <aside>
-        <h3>Sidebar</h3>
+        <h3>Side<span class="un-abbreviated">bar</span></h3>
       </aside>
     </div>
     <footer>
       <h3>Footer</h3>
-      <p><strong>https://www.linkedin.com/in/jerrycyip/</strong></p>
+      <p class="heading-descriptor"><strong>https://www.linkedin.com/in/jerrycyip/</strong></p>
     </footer>
     <script src="./digital_clock/src/index.js"></script>
     <script src="./analog_clock/src/index.js"></script>

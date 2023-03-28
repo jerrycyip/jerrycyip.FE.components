@@ -2,7 +2,7 @@ body {
   font-family: sans-serif;
 }
 
-.wrapper {
+.digital-clock-wrapper {
   display: flex; /* flex item's width defaults to content width vs div's (block elem) width defaults to fill width of parent container */
   justify-content: center; /* centers clock */
   align-items: center; 
@@ -10,8 +10,8 @@ body {
 
 /* styling for overall digital clock display */
 .digital-clock {
-  --segment-width: 8px;
-  --segment-size: 32px;
+  --segment-width: 0.4rem; /*8px;*/
+  --segment-size: 1.6rem; /*32px;*/
   --segment-color: #fff;
 
   background-color: #000;

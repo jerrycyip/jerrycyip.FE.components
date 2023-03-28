@@ -4,7 +4,7 @@ body {
 
 
 /* center the clock horizontally */
-.wrapper {
+.analog-clock-wrapper {
 /* flex item's width defaults to content width vs div's (block elem) width defaults to fill width of parent container */  
   display: flex; 
   justify-content: center; /* centers clock */

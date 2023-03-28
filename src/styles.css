@@ -13,6 +13,27 @@ footer h3 {
   margin-bottom: 0;
 }
 
+h1 {
+  font-size: 1.3rem;
+}
+
+h2 {
+  font-size: 1.1rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+h4 {
+  font-size: 0.9rem;
+}
+
+
+.heading-descriptor {
+  margin-top: 0.7rem;
+}
+
 .topic-wrapper {
   display: flex;
   align-items: start;
@@ -24,20 +45,12 @@ footer h3 {
   margin-top: -1.25rem;
 }
 
-@media only screen and (max-width: 1175px) {
-  .topic-wrapper {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 2rem;
-    text-align: left;
-  }
-}
 
-.column-wrapper {
+.like-button-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 28vw;
 }
 
 .star-rating-wrapper {
@@ -52,4 +65,30 @@ footer h3 {
 
 .contact-form-wrapper textarea {
   min-height: 5rem;
+}
+
+@media only screen and (max-width: 1175px) {
+  .topic-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+    text-align: left;
+  }
+
+  .un-abbreviated {
+    display: none;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+  nav, aside {
+    display: none;
+  }
+
+  .like-button-wrapper {
+    max-width: 90vw;
+  }
+
 }

@@ -3,6 +3,12 @@
   max-width: 30vw;
 }
 
+@media only screen and (max-width: 1175px) {
+  .todo-list-wrapper {
+    max-width: 90vw;
+  }
+}
+
 .todo-list-wrapper #submit {
   margin-top: 0.5rem;
 }
