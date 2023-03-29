@@ -14,7 +14,6 @@ body {
   box-sizing: border-box;
 }
 
-header,
 nav,
 main,
 aside,
@@ -30,9 +29,13 @@ footer {
 
 header {
   background-color: rgb(189, 231, 235);
-  height: 6rem; /* 60px;*/
+  height: 5rem; /* 60px;*/
   flex-shrink: 0;
   min-width: 100vw;
+  padding-top:0.7rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
 }
 
 nav {
@@ -60,4 +63,11 @@ aside {
 footer {
   background-color: rgb(218, 219, 222);
   height: 4rem; /*100px;*/
+  padding: 0.6rem;
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+    height: 5.5rem;
+  }
 }

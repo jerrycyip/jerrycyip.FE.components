@@ -31,7 +31,7 @@ h4 {
 
 
 .heading-descriptor {
-  margin-top: 0.7rem;
+  margin-top: 0.65rem;
 }
 
 .topic-wrapper {
@@ -67,6 +67,14 @@ h4 {
   min-height: 5rem;
 }
 
+.links {
+  color: black;
+}
+
+.footer-details {
+  margin-top: 0.4rem;
+}
+
 @media only screen and (max-width: 1175px) {
   .topic-wrapper {
     display: flex;
@@ -91,6 +99,5 @@ h4 {
   nav, aside {
     display: none;
   }
-
 
 }
