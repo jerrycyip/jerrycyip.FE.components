@@ -1,4 +1,5 @@
-# jerrycyip.github.io: Frontend demo site of sample components
+# Frontend demo site of sample components
+
 ## Summary
 This is a portfolio website of frontend components used to practice common frontend interview questions as well as showcase my skills and experience in web development.
 
