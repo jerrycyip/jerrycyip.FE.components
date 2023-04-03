@@ -1,6 +1,6 @@
 # Tabs II
 ## Description
-This is an advanced version of the Tabs component that incorporates accessibility (A11Y) features.
+This is an advanced version of the Tabs component that incorporates accessibility (a11y) features.
 
 ## Requirements
 The ARIA Authoring Practices Guide has a long list of guidelines for the ARIA roles, states, and properties to add to the various elements of a tabs component. We should implement the following guidelines for this question:
