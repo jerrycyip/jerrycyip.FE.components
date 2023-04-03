@@ -101,7 +101,7 @@
             // use Event Delegation for single event listener
             DOM.$tabBar.addEventListener('click', (event) => {
                 if (event.target.tagName !== 'BUTTON') {
-                    return; // ignore if tab not clicked
+                    return; // ignore if tab button not clicked
                 }
 
                 state.value = event.target.getAttribute('data-value'); // update state
