@@ -22,7 +22,7 @@ body {
 .accordion-item-title {
   display: flex;
   justify-content: space-between;
-  text-align: center;
+  text-align: start;
   align-items: center;
   border: none;
   background: none;

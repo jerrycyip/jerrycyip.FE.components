@@ -1,36 +1,29 @@
 // IFFE best practice to prevent global namespace var collision via private vars
 // also ensures module pattern (pre ES6 modules)
 (() => {
+
+    // constant vars (serving as stub API or config values)
+    const SECTIONS = [
+        {
+            value: 'html',
+            title: 'HTML',        
+            content: 'The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser.'
+        },
+        {
+            value: 'css',
+            title: 'CSS',
+            content: 'Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML or XML.'
+        },
+        {
+            value: 'javascript',
+            title: 'JavaScript',
+            content: 'JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS.'
+            ,
+        },
+    ];
+    
     // invoke accordion function with provided stub api values
-    accordion(document.getElementById('accordion'), {
-        sections: [
-            {
-                value: 'html',
-                title: 'HTML',
-                content: 
-                `The HyperText Markup Language or HTML is the
-                    standard markup language for documents designed to
-                    be displayed in a web browser.`,
-            },
-            {
-                value: 'css',
-                title: 'CSS',
-                content: 
-                `Cascading Style Sheets is a style sheet language
-                used for describing the presentation of a document
-                written in a markup language such as HTML or XML.`,
-            },
-            {
-                value: 'javascript',
-                title: 'JavaScript',
-                content: 
-                `JavaScript, often abbreviated as JS, is a
-                programming language that is one of the core
-                technologies of the World Wide Web, alongside HTML
-                and CSS.`,
-            },
-        ]
-    });
+    accordion(document.getElementById('accordion'), {sections: SECTIONS});
 
     //  main function
     function accordion($rootEl, { sections }){
@@ -50,13 +43,16 @@
                 // create and style accordion section title button w/ styling
                 const $accordionTitleBtn = document.createElement('button');
                 $accordionTitleBtn.classList.add('accordion-item-title',);
-                $accordionTitleBtn.type = 'button';
+                // Always specify the type attribute for the button. 
+                // The default type for Internet Explorer is "button", while in other browsers 
+                // (and in the W3C specification) it is "submit".
+                $accordionTitleBtn.type = 'button'; 
                 $accordionTitleBtn.setAttribute('data-value', value, ); // add custom data value
                 // create and style accordion icon for expanding/collapsing
                 const $accordionIcon = document.createElement('span');
                 $accordionIcon.classList.add('accordion-icon');
                 $accordionIcon.setAttribute('aria-hidden', 'true');
-                // attach icon to button
+                // attach title and icon to button
                 $accordionTitleBtn.append(title, $accordionIcon);
                 // create and style contents section for accordion section    
                 const $accordionSectionContents = document.createElement('div');

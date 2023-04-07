@@ -3,11 +3,7 @@ import Tabs from './Tabs';
 import './styles.css';
 
 export default function App() {
-  return (
-    <div className="wrapper">
-      <Tabs 
-      defaultValue={'css'}
-      items={[
+  const ITEMS = [
           {
             value: 'html',
             label: 'HTML',
@@ -26,7 +22,13 @@ export default function App() {
             panel:
               'JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS.',
           },
-        ]}
+        ];
+
+  return (
+    <div className="wrapper">
+      <Tabs
+        defaultValue={'html'}        
+        items={ITEMS}
       />
     </div>
   );
