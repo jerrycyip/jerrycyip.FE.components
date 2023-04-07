@@ -9,7 +9,8 @@ Clicking on a section title toggles the contents.
 If the section is collapsed, the section will be expanded and the contents will be displayed.
 If the section is expanded, the section will be collapsed and the contents will be hidden.
 The sections are independent of each other.
-Example
+
+## Example
 Try out an [example of an accordion component](https://www.w3.org/WAI/ARIA/apg/patterns/accordion/examples/accordion/).
 
 ## Notes
