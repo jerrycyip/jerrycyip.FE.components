@@ -96,7 +96,7 @@ h4 {
 }
 
 @media only screen and (max-width: 600px) {
-  nav, aside {
+  nav, aside, .mobile-abbreviated {
     display: none;
   }
 

@@ -1,4 +1,4 @@
-# Frontend demo site of sample components
+# Frontend Demo - Jerry Yip
 
 ## Summary
 This is a [portfolio website](https://jerrycyip.netlify.app/) of sample frontend components used to practice common frontend interview questions as well as showcase my skills and experience in web development.  The hosted site can be found [here](https://jerrycyip.netlify.app/)
