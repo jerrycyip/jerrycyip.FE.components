@@ -16,36 +16,28 @@
         return accordionId + '-panel-' + value;
     }
     
+    // constant vars (serving as stub API or config values)
+    const SECTIONS = [
+        {
+            value: 'html',
+            title: 'HTML',        
+            content: 'The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser.'
+        },
+        {
+            value: 'css',
+            title: 'CSS',
+            content: 'Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML or XML.'
+        },
+        {
+            value: 'javascript',
+            title: 'JavaScript',
+            content: 'JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS.'
+            ,
+        },
+    ];    
+
     // invoke accordion function with provided stub api values
-    accordion(document.getElementById('accordion'), {
-        sections: [
-            {
-                value: 'html',
-                title: 'HTML',
-                content: 
-                `The HyperText Markup Language or HTML is the
-                    standard markup language for documents designed to
-                    be displayed in a web browser.`,
-            },
-            {
-                value: 'css',
-                title: 'CSS',
-                content: 
-                `Cascading Style Sheets is a style sheet language
-                used for describing the presentation of a document
-                written in a markup language such as HTML or XML.`,
-            },
-            {
-                value: 'javascript',
-                title: 'Javascript',
-                content: 
-                `JavaScript, often abbreviated as JS, is a
-                programming language that is one of the core
-                technologies of the World Wide Web, alongside HTML
-                and CSS.`,
-            },
-        ]
-    });
+    accordion(document.getElementById('accordion'), {sections: SECTIONS});
     // main accordion function
     function accordion($rootEl, { sections }){
         const accordionId = `accordion-${newID()}`;
