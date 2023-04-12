@@ -2,9 +2,9 @@
 
 ## Description
 This is an advanced version of Accordion. Per [Accordion Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/accordion/):
-
+<center>
   An accordion is a vertically stacked set of interactive headings that each contain a title, content snippet, or thumbnail representing a section of content. The headings function as controls that enable users to reveal or hide their associated sections of content. Accordions are commonly used to reduce the need to scroll when presenting multiple sections of content on a single page.
-
+</center>
 In Accordion, we built a functional accordion component that can expand/collapse each section's contents. However, building good UI components goes beyond functionality and we have to ensure our components have great accessibility as well by adding the right ARIA roles, states, and properties to the DOM elements.
 
 ## Requirements
