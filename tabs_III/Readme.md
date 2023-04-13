@@ -20,10 +20,11 @@ We'll be following a modified subset of the [necessary keyboard interactions](ht
 ## Notes
 The focus of this question is on adding keyboard functionality, not the styling. We have provided the solution to the Tabs II question here for you to build on top of. You can reuse the existing styling.
 
+## Implementation 
 ## Listening for Keyboard 
-Firstly it's crucial to know the difference between the keypress vs the keydown event. The keypress event is only fired when a key that produces a character value is pressed down. This would exclude the Left, Right, Home, and End keys which are requirements of this question. The keypress event is also deprecated and shouldn't be used. For these reasons, we should be using the keydown event. We'll add the onKeyPress prop to <div role="tablist">.
+Firstly it's crucial to know the difference between the keypress vs the keydown event. The keypress event is only fired when a key that produces a character value is pressed down. This would exclude the Left, Right, Home, and End keys which are requirements of this question. The keypress event is also deprecated and shouldn't be used. For these reasons, we should be using the keydown event. We'll add the onKeyDown prop to <div role="tablist">.
 
-To know which key is being pressed, we can use event.key or event.code on the event passed to onKeyPress's callback. There are some [differences between](https://javascript.info/keyboard-events) event.key vs event.code but for the purposes of this question it doesn't make a difference and can be ignored. We'll just use event.code.
+To know which key is being pressed, we can use event.key or event.code on the event passed to onKeyDown's callback. There are some [differences between](https://javascript.info/keyboard-events) event.key vs event.code but for the purposes of this question it doesn't make a difference and can be ignored. We'll just use event.code.
 
 ## Responding to Keyboard Events
 Next we read the event.code property and respond with custom code depending on its value. A switch case is suitable for such a situation:
