@@ -11,8 +11,9 @@
     document.querySelector('.error-message'),
     );
 
-  // function to instantiate button and add click event listener
-  function likeButton(buttonEl, errorMessageEl){
+  // main function to instantiate button and add click event listener
+  // '$' prefix convention for params/vars to indicate DOM elems and ensure familiar syntax with legacy jquery APIs
+  function likeButton($buttonEl, $errorMessageEl){
     let liked = false; // flag to determine if button is in default/liked state
     let isPending = false; // flag for whether there's a pending background API request
     let errorMessage = null; // error mssg shown if api request fails
@@ -21,20 +22,20 @@
     update(); // update state based on latest flags
     
     function init(){
-      buttonEl.classList.add('like-button'); // base styling
-      buttonEl.addEventListener('click', () => { // click event listener
+      $buttonEl.classList.add('like-button'); // base styling
+      $buttonEl.addEventListener('click', () => { // click event listener
         likeUnlikeAction(); // click event handler callback
       });
       // okay to use innerHTML since we have full control over contents (trustable)
       // use 2 spans to componentize the like button into the icon and the label
-      buttonEl.innerHTML = `<span class="like-button-icon"></span>
+      $buttonEl.innerHTML = `<span class="like-button-icon"></span>
                             <span class="like-button-label"></span>`;
     }
 
     async function likeUnlikeAction(){
       try {
         isPending = true;
-        errorMessage = null;
+        errorMessage = null; // clear any prior error message
         update(); // update styling & disable button while awaiting api response
 
       const response = await fetch(
@@ -66,30 +67,30 @@
     }    
 
     function update(){
-      buttonEl.classList.toggle( // update liked state styling if applic.
+      $buttonEl.classList.toggle( // update liked state styling if applic. (i.e. successful API call)
         'like-button--liked',
         liked,
       );
 
-      buttonEl.classList.toggle( // update default state styling if applic
+      $buttonEl.classList.toggle( // update default state styling if applic (i.e. successful API call)
         'like-button--default',
         !liked,          
       );
 
       // update disabled status to avoid double click issues and confusion
-      buttonEl.disabled = isPending; 
+      $buttonEl.disabled = isPending; 
       // update icon based on pending status
-      buttonEl.querySelector('.like-button-icon',
+      $buttonEl.querySelector('.like-button-icon',
         ).innerHTML = isPending 
           ? spinnerIconHTML
           : heartIconHTML;
       
       // update button text           
-      buttonEl.querySelector('.like-button-label', 
+      $buttonEl.querySelector('.like-button-label', 
       ).innerHTML = liked ? 'Liked' : 'Like'; 
 
-      // set error message based on api response or null if n/a
-      errorMessageEl.textContent = errorMessage || ''; 
+      // set error message based on api error response or null if n/a
+      $errorMessageEl.textContent = errorMessage || ''; 
     }
 
   }

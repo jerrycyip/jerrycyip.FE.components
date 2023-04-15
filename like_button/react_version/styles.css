@@ -12,17 +12,17 @@ body {
   --active-color: #f00;
   --default-background-color: #fff;
 
-  color: var(--default-color);
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 32px;
-  font-weight: bold;
-  display: flex;
   align-items: center;
+  border-style: solid;
+  border-radius: 32px;
+  border-width: 2px;
+  display: flex;
+  color: var(--default-color);
+  cursor: pointer;
+  font-weight: bold;
   gap: 8px; /* justify-content: space-around; */
   height: 32px;
   padding: 4px 8px; 
-  cursor: pointer;
 }
 
 .like-button--default {
@@ -41,7 +41,6 @@ body {
   background-color: var(--active-color);
   border-color: var(--active-color);  
   color: var(--default-background-color);  
-
 }
 
 
