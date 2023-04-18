@@ -2,7 +2,6 @@ body {
   font-family: sans-serif;
 }
 
-
 .wrapper {
   align-items: center;
   display: flex; /* creates new block formatting context */

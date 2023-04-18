@@ -3,20 +3,20 @@ import TrafficLight from './TrafficLight';
 import './styles.css';
 
 const config = {
-  red: {
-    backgroundColor: 'red',
-    duration: 4000,
-    next: 'green',
+  green: {
+    backgroundColor: 'green',
+    duration: 2100,
+    next: 'yellow',
   },
   yellow: {
     backgroundColor: 'yellow',
-    duration: 500,
+    duration: 700,
     next: 'red',
   },
-  green: {
-    backgroundColor: 'green',
-    duration: 3000,
-    next: 'yellow',
+  red: {
+    backgroundColor: 'red',
+    duration: 2200,
+    next: 'green',
   },
 };
 
