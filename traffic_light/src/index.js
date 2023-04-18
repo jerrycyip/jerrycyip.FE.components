@@ -36,22 +36,28 @@ to avoid global scope collisions via closures
     });
 
     //main fn to create overall traffic light container and lights
+    // '$' prefix convention for params/vars to indicate DOM elems and ensure familiar syntax with legacy jquery APIs 
     function trafficLight($rootEl, { initialColor, config, layout },) {
         let currentColor = initialColor //  initialize color
-        const $containerEl = document.createElement('div'); // create traffic light container
-        $containerEl.classList.add('traffic-light-container'); // set base styling
-        $containerEl.setAttribute('aria-live', 'polite'); // set a11y notification of current active light
-    
-        if (layout === 'vertical') { // change flex-direction to column if vertical
-            $containerEl.classList.add(
-                'traffic-light-container--vertical',
-            );
-        };
-        
         let timer = null; // initialize timer for timeout assignment s.t. it can be cleared for tab/window closure
+        const $containerEl = document.createElement('div'); // create traffic light container
 
-        $rootEl.append($containerEl); // append traffic light container to root element
+        init();
         renderLoop();  // call render loop to render traffic light
+
+
+        // func to initialize traffic light features that persist across component lifecycle
+        function init() {
+            $containerEl.classList.add('traffic-light-container'); // set base styling
+            $containerEl.setAttribute('aria-live', 'polite'); // set a11y notification of current active light
+        
+            if (layout === 'vertical') { // change flex-direction to column if vertical
+                $containerEl.classList.add(
+                    'traffic-light-container--vertical',
+                );
+            };
+            $rootEl.append($containerEl); // append traffic light container to root element
+        }
 
         function renderLoop() {
             render(); // renders traffic light

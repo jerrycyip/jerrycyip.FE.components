@@ -3,7 +3,7 @@ body {
 }
 
 .traffic-light-wrapper {
-  display: flex;
+  display: flex; /* creates new block formatting context */
   /* flex-direction: column; */
   justify-content: center; /* not needed? */
   align-items: center;

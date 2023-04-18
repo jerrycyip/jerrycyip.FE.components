@@ -1,6 +1,6 @@
 // IFFE to ensure modular pattern and avoid global scope collision
 (() => {
-  // non-changing constant vars
+  // non-changing constant and config vars
   const STAR_ICON_CLASS = 'star-icon';
   const STAR_ICON_FILLED_CLASS = 'star-icon-filled';
   const STAR_TEMPLATE = `<svg
@@ -22,17 +22,18 @@
   const star2 = starRating(document.getElementById('star-rating-2'), {max: 8, value: 5});
   star2.setValue(3);
 
-  // alt ways to invoke main function:
+  // alt way to invoke main function:
   //  let setVal = starRating(document.getElementById('star-rating'), {max: 5, value: 3});
   //  starRating(document.getElementById('star-rating-2'), { max: 10, value: 5 });
 
   // main Star Rating function
   // '$' prefix convention for params/vars to indicate DOM elems and ensure familiar syntax with legacy jquery APIs 
   function starRating( $rootEl, { max = 5, value = 0 }) {
-    // var to track latest selected (clicked) rating value
+    // var to track state of latest selected (clicked) rating value; initialized to default 'value'
     let currentValue = value;
 
     init(max); // initialize w/ max star val
+    attachListeners(); // add event listeners
     setValue(currentValue); // set init value to default val
 
     // Expose setValue function so that users can change the value of the widget if needed (optional).    
@@ -40,8 +41,8 @@
       setValue,
     };
 
-  // fn for setting up the DOM elems (i.e. star rating ) that persist throughout 
-  // lifecycle  of component (i.e. never destroyed/re-rendered) 
+  // function for setting up DOM elems that persist throughout 
+  // lifecycle  of component (i.e. never destroyed/re-rendered => star rating component) 
     function init(maxVal) {
       const html = Array.from(
         { length: maxVal }, // create Array from array-like obj w/ length property = max
@@ -49,7 +50,10 @@
       ).join('');
       // Using .innerHTML is safe here since it's non-user content.
       $rootEl.innerHTML = html;
+    }
     
+    // function to add event listeners (can also just be grouped inside init function vs separate fn)
+    function attachListeners(){
     // event listener for clicking stars
       $rootEl.addEventListener('click', (event) => {
         const $starEl = event.target.closest( // identify closest clicked star via
@@ -75,7 +79,7 @@
         // get new star rating based on index of mouseover star 
           const value = [...$rootEl.children].indexOf($starEl) + 1;
           
-          highlightStars(value); // set new star rating
+          highlightStars(value); // temporarily set new star rating (w/out updating currentValue var)
         },
       );
 
@@ -90,7 +94,7 @@
       highlightStars(currentValue); // highlight stars based on current value
     }
 
-    // highlight stars based on current value (via mouseover or last clicked)
+    // fn to highlight stars based on current value (via mouseover or last clicked)
     function highlightStars(index) {
       for ( let i = 0; i < $rootEl.children.length; i++) {
         if (i < index) { // fill in selected stars
@@ -106,6 +110,4 @@
     }
   }
 
-
-  //
 })();
