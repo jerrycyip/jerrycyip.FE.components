@@ -8,65 +8,76 @@
         'Wash the dishes',
     ];
 
-    // DOM elems that persist throughout usage of app. Use 'El' suffix & legacy jquery '$' prefix to denote
-    const $formEl = document.querySelector('#form');
-    const $inputEl = document.querySelector("#input");
-    const $todoListEl = document.querySelector("#todo-list")
-    // enable screen readers to notify of new tasks added via aria-live region    
-    $todoListEl.setAttribute('aria-live', 'polite');
-    const $taskTemplate = document.querySelector(
-        '#task-template',
-    );
+    // invoke main todo list function
+    todoList();
 
-    // initial render
-    initialRender();
-    
-    // fn to render initial example tasks using the template & config TASKS var
-    function initialRender(){
-        TASKS.forEach((taskValue) => {
-            addTask(taskValue);
-        });
-    }
+    // main function for creating todo list component
+    function todoList(){
+        // DOM elems that persist throughout usage of app. Use 'El' suffix & legacy jquery '$' prefix to denote
+        const $formEl = document.querySelector('#form');
+        const $inputEl = document.querySelector("#input");
+        const $todoListEl = document.querySelector("#todo-list")
+        // enable screen readers to notify of new tasks added via aria-live region    
+        $todoListEl.setAttribute('aria-live', 'polite');
+        const $taskTemplate = document.querySelector(
+            '#task-template',
+        );
 
-    // fn to add task and button to todo list
-    function addTask(value) {
-        // Use the template to make it easy to add new tasks.
-        const $newTaskElement = $taskTemplate.content.cloneNode(true);
-        // use Node.textContent instead of Element.innerHTML to prevent XSS attacks
-        $newTaskElement.querySelector('span').textContent = value;
-        $todoListEl.appendChild($newTaskElement);
-    }
+        // initial render
+        init();
+        // attach event listeners
+        attachListeners();
 
-    // listen for submit button
-    // use Form (instead of button) to support Enter key as well as clicking submit btn
-    $formEl.addEventListener('submit', (event) => {
-        event.preventDefault(); // prevent deflt page reload behavior
-        const value = $inputEl.value.trim(); // trim before adding to list
-        // ignore empty vals
-        if (value === '') return;
-
-        addTask(value);
-        $inputEl.value = ''; // reset input to allow adding new tasks
-    });
-
-    // listener for deletion: Add listener to list instead of indiv tasks by way of event 
-    // delegation.  Allows both existing and new delete buttons to respond to clicks.
-    // Removes need to add indiv event listeners to each button + removal upon deletion    
-    $todoListEl.addEventListener('click', (event) => {
-        if(event.target.tagName !== 'BUTTON') return;  // confirm delete button is clicked
-        
-        // add confirmation before destructive actions
-        if (window.confirm('Are you sure you want to delete the task?')){
-            deleteTask(event.target.parentNode); // pass the encompassing list item to capture the entire task entry for deletion (span & delete button) 
-            $inputEl.focus(); // return focus to input element
+        // fn to render initial example tasks using the template & config TASKS var
+        function init(){
+            TASKS.forEach((taskValue) => {
+                addTask(taskValue);
+            });
         }
-    });
 
-    // remove a task from the todo list
-    function deleteTask($itemEl){
-        $itemEl.parentNode.removeChild($itemEl); // the task entry's encompassing list item is removed from the parent unordered list <ul>
+        // fn to add task and button to todo list
+        function addTask(value) {
+            // Use the template to make it easy to add new tasks.
+            const $newTaskElement = $taskTemplate.content.cloneNode(true);
+            // use Node.textContent instead of Element.innerHTML to prevent XSS attacks
+            $newTaskElement.querySelector('span').textContent = value;
+            $todoListEl.appendChild($newTaskElement);
+            $inputEl.focus(); // optional: return focus to input element
+        }
+
+        // func to add event listeners for adding/removing tasks
+        function attachListeners(){
+            // listen for submit button
+            // use Form (instead of button) to support Enter key as well as clicking submit btn
+            $formEl.addEventListener('submit', (event) => {
+                event.preventDefault(); // prevent deflt page reload behavior
+                const value = $inputEl.value.trim(); // trim before adding to list
+                // ignore empty vals
+                if (value === '') return;
+
+                addTask(value);
+                $inputEl.value = ''; // reset input to allow adding new tasks
+            });
+
+            // listener for deletion: Add listener to list instead of indiv tasks by way of event 
+            // delegation.  Allows both existing and new delete buttons to respond to clicks.
+            // Removes need to add indiv event listeners to each button + removal upon deletion    
+            $todoListEl.addEventListener('click', (event) => {
+                if(event.target.tagName !== 'BUTTON') return;  // confirm delete button is clicked
+                
+                // add confirmation before destructive actions
+                if (window.confirm('Are you sure you want to delete the task?')){
+                    deleteTask(event.target.parentNode); // pass the encompassing list item to capture the entire task entry for deletion (span & delete button) 
+                    $inputEl.focus(); // return focus to input element
+                }
+            });
+        }
+
+        // remove a task from the todo list
+        function deleteTask($itemEl){
+            $itemEl.parentNode.removeChild($itemEl); // the task entry's encompassing list item is removed from the parent unordered list <ul>
+        }
     }
-
 })()
 
 
