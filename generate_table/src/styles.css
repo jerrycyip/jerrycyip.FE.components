@@ -11,21 +11,21 @@ body {
   font-size: 12px;
 }
 
-form {
+#generate-table-form {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-label + input {
+#generate-table-form label + input {
   margin-left: 8px;
 }
 
-table {
+#table-container table {
   border-collapse: collapse;
 }
 
-table td {
+#table-container td {
   border: 1px solid #000;
   padding: 8px;
   text-align: center;

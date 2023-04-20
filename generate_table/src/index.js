@@ -1,6 +1,6 @@
 
 (() => {
-    const $formEl = document.querySelector('#form');
+    const $formEl = document.querySelector('#generate-table-form');
     const $tableContainerEl = document.querySelector('#table-container');
 
     $formEl.addEventListener('submit', (event) => {
