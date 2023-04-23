@@ -20,7 +20,7 @@ We can separate out the solution into two parts,
       render($rootEl, new Date(), size);
     }, 100); // note: clock renders/starts after first interval
 
-    window.addEventListener('beforerunload', () => {
+    window.addEventListener('beforeunload', () => {
       window.clearInteval(timer); // clear set interval to prevent memory leaks (older browsers)
     });
 
@@ -34,14 +34,14 @@ We can separate out the solution into two parts,
 
     // Percentages used for rotation angle calc of hands
     const secondsPercentage = seconds / 60; 
-    const minutePercentage = 
+    const minutesPercentage = 
     (minutes + secondsPercentage) / 60;
-    const hourPercentage = 
-    ((hours % 12) + minutePercentage) / 12;
+    const hoursPercentage = 
+    ((hours % 12) + minutesPercentage) / 12;
     
     // translate % to angle rotation for transformation in createHand
-    const hourAngle = hourPercentage * FULL_ROTATION_DEGREES; // translate to deg
-    const minutesAngle = minutePercentage * FULL_ROTATION_DEGREES;
+    const hourAngle = hoursPercentage * FULL_ROTATION_DEGREES; // translate to deg
+    const minutesAngle = minutesPercentage * FULL_ROTATION_DEGREES;
     const secondsAngle = secondsPercentage * FULL_ROTATION_DEGREES;
     // create datetime attribute value for time tag for calendar reminders/search engine results
     const dateTimeDisplay = `${padTwoDigit(hours)}:
@@ -56,8 +56,8 @@ We can separate out the solution into two parts,
     // append clock handles w/ varying lengths and widths
     $timeEl.append(
       createHand({ angle: hourAngle, height: 0.5, width: 3}), // hour hand
-      createHand({ angle: minutesAngle, height: 0.9, width: 2 }), // minute hand
-      createHand({ angle: secondsAngle, height: 0.8, width: 1 }) // seconds hand
+      createHand({ angle: minutesAngle, height: 0.7, width: 2 }), // minute hand
+      createHand({ angle: secondsAngle, height: 0.9, width: 1 }) // seconds hand
     );
 
     /* clear (teardown) prior clock and replace similar to React render */
@@ -71,7 +71,7 @@ We can separate out the solution into two parts,
   }
 
   // create clock hands
-  function createHand({ height = 1, width = 1, angle }) {
+  function createHand({ angle, height = 1, width = 1 }) {
     const $hand = document.createElement('div');
     $hand.classList.add('clock-hand');
     $hand.setAttribute('aria-hidden', true); // remove hand from accessibility tree

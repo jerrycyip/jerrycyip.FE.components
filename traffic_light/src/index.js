@@ -105,7 +105,7 @@ to avoid global scope collisions via closures
         // good practice to clear the timer whenever tab/window is closed via listener 
         // of beforeunload events -- prevents memory leaks espec. in older browsers
         window.addEventListener('beforeunload', () => {
-            window.clearInterval(timer);
+            window.clearTimeout(timer); // clearInterval technically works too since pool of ids shared
         });
     }
 

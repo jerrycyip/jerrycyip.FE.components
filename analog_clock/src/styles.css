@@ -2,7 +2,6 @@ body {
   font-family: sans-serif;
 }
 
-
 /* center the clock horizontally */
 .analog-clock-wrapper {
 /* flex item's width defaults to content width vs div's (block elem) width defaults to fill width of parent container */  
@@ -29,5 +28,5 @@ body {
   height: calc(var(--size) / 2); /* param: default lgth/ht 1/2 of clock radius */
   left: calc(var(--size) / 2); /* cntrd fr lft 1/2 of clock radius */
   top: calc(var(--size) / 2); /* cntrd dwn fr top 1/2 of clock radius */
-  transform-origin: top center; /* sets the origin for element's transformations */
+  transform-origin: top center; /* sets the origin for element's transformations to all be cntr of clock*/
 }
