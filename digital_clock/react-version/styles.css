@@ -3,15 +3,14 @@ body {
 }
 
 .digital-clock-wrapper {
-  display: flex; /* flex item's width defaults to content width vs div's (block elem) width defaults to fill width of parent container */
-  justify-content: center; /* centers clock */
-  align-items: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* styling for overall digital clock display */
 .digital-clock {
-  --segment-width: 0.4rem; /*8px;*/
-  --segment-size: 1.8rem; /*32px;*/
+  --segment-width: 8px;
+  --segment-size: 32px;
   --segment-color: #fff;
 
   background-color: #000;
@@ -22,7 +21,6 @@ body {
   padding: 20px;
 }
 
-/* base styling for overall shape of top/bottom digit squares */
 .digit-square {
   border-style: solid;
   border-color: transparent;
@@ -30,26 +28,19 @@ body {
   box-sizing: border-box;
   height: var(--segment-size);
   width: var(--segment-size);
-  border-radius: calc(var(--segment-width) / 2); /* soften the edges */
+  border-radius: calc(var(--segment-width) / 2);
 }
 
-/* adjust width of top & bottom half squares' shared borders by 1/2 */
 .digit-square-top {
   border-bottom-width: calc(var(--segment-width) / 2);
 }
 
-/* adjust width of top & bottom half squares' shared borders by 1/2 */
 .digit-square-bottom {
   border-top-width: calc(var(--segment-width) / 2);
 }
 
-/* styling for diff segments of digits (fill color over transparent base)*/
 .digit-square-border-top {
   border-top-color: var(--segment-color);
-}
-
-.digit-square-border-left {
-  border-left-color: var(--segment-color);
 }
 
 .digit-square-border-right {
@@ -60,19 +51,20 @@ body {
   border-bottom-color: var(--segment-color);
 }
 
+.digit-square-border-left {
+  border-left-color: var(--segment-color);
+}
+
 .separator {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center; /* this property may not be needed */
+  align-items: center;
 }
 
 .separator-dot {
   background-color: var(--segment-color);
   height: var(--segment-width);
   width: var(--segment-width);
-  border-radius: var(--segment-width); /* round circles */
+  border-radius: var(--segment-width);
 }
-
-
-
