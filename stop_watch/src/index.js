@@ -1,4 +1,3 @@
-// import './styles.css'; // envmt specific
 
 // IFFE best practice to prevent global namespace var collision via private vars
 // also ensures module pattern (pre ES6 modules)
@@ -31,7 +30,7 @@
         init(); // initialize stopwatch creation
         $rootEl.append($DOM.container);
 
-        // fn to initialize stopwatch component
+        // fn to initialize stopwatch features that persist across component lifecycle
         function init() {
             $DOM.container.append($DOM.timeDisplay);
             $DOM.timeDisplay.classList.add('time');
@@ -50,12 +49,14 @@
                 toggleTimer();
             });
 
+            $DOM.startStopButton.classList.add('stopwatch-button');
             $DOM.startStopButton.textContent = 'Start'; // button initial text = Start
             // set event listener for clicks on start/stop button to toggle start/stop
             $DOM.startStopButton.addEventListener('click', () => {
                 toggleTimer();
             });
             
+            $DOM.resetButton.classList.add('stopwatch-button');
             $DOM.resetButton.textContent = 'Reset';
             $DOM.resetButton.addEventListener('click', () => {
                 resetTimer();
@@ -129,7 +130,7 @@
 
             $DOM.timeInner.append(
                 timeSegment(
-                    padTwoDigit(Math.floor(formattedTime.ms / 10)), // convert to hundredths of seconds w/ leading 0 if nec
+                    padTwoDigit(Math.trunc(formattedTime.ms / 10)), // convert to hundredths of seconds w/ leading 0 if nec
                     null,
                     true,
                 ),
@@ -151,17 +152,17 @@
             ms: 0,
         };
         if (time > MS_IN_HOUR) {
-            parts.hours = Math.floor(time / MS_IN_HOUR); // Calc hrly comp.
+            parts.hours = Math.trunc(time / MS_IN_HOUR); // Calc hrly comp.
             time %= MS_IN_HOUR;
         }
 
         if (time > MS_IN_MINUTE) {
-            parts.minutes = Math.floor(time / MS_IN_MINUTE);
+            parts.minutes = Math.trunc(time / MS_IN_MINUTE); // can alternatively use Math.floor, but slower
             time %= MS_IN_MINUTE;
         }
 
         if (time > MS_IN_SECOND) {
-            parts.seconds = Math.floor(time / MS_IN_SECOND );
+            parts.seconds = Math.trunc(time / MS_IN_SECOND );
             time %= MS_IN_SECOND;
         }
 

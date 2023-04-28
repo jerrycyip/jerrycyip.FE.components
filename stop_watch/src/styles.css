@@ -2,10 +2,11 @@ body {
   font-family: sans-serif;
 }
 
-.stopwatch-wrapper {
+/* wrapper not needed, allow new block formatting context via time-inner */
+/* .stopwatch-wrapper {
   display: flex;
   align-items: center;
-}
+} */
 
 .time {
   background-color: transparent;
@@ -13,6 +14,7 @@ body {
   cursor: pointer;
   position: relative;
   user-select: none;
+  min-width: 13rem;
 }
 
 .time-inner {
@@ -29,6 +31,15 @@ body {
   right: 0;
 }
 
+.stopwatch-button {
+  width: 3.5rem;
+}
+
+.button-container {
+  display: flex;
+  gap: 16px;
+}
+
 .time-number {
   font-size: 62px;
 }
@@ -39,10 +50,5 @@ body {
 
 .time-unit {
   font-size: 24px;
-}
-
-.button-container {
-  display: flex;
-  gap: 16px;
 }
 
