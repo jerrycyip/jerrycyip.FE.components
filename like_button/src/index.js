@@ -53,7 +53,7 @@
 
       if (!response.ok) { // error handling
         const res = await response.json();
-        errorMessage = res.error;
+        errorMessage = res.error || `Unknown error during attempted ${liked ? 'unlike' : 'like'}. Please try again later!`; // in case api is down
         return; // exit in event of error
       }
       // for successful API call: toggle liked flag

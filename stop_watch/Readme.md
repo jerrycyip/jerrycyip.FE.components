@@ -20,24 +20,24 @@ The tricky part of this question is deciding what goes into the component state 
 
   * totalDuration: Total time that has passed so far.
   * timerId: Timer ID of the currently running interval timer, or null if there's no currently running timer.
-  * lastTickTiming: This is the time that the last interval callback has run. We will keep incrementing the totalDuration by the delta between the current time (Date.now()) and the lastTickTiming. Using this approach, the totalDuration will still be accurate even if the callbacks run at irregular intervals.
+  * lastTickTiming: This is the time that the last interval callback was run. We will keep incrementing the totalDuration by the delta between the current time (Date.now()) and the lastTickTiming. Using this approach, the totalDuration will still be accurate even if the callbacks run at irregular intervals.
 
 Since there are a few buttons in the requirements that has duplicate functionality, we should define these functionality as a few functions that will be triggered by the buttons:
 
-## startTimer
+### startTimer
 This function kicks off the timer and updates the totalDuration value each time the setInterval callback is run with the delta between the last update time (lastTickTiming) and the current time. We use a interval timing of 1ms since stopwatches are very time sensitive and millisecond-level precision is desired.
 
-## stopInterval
+### stopInterval
 A simple function to stop the interval timer from running (via clearInterval) and clear the current timerId. This is being used by the "Stop" button and "Reset" button.
 
-## resetTimer
+### resetTimer
 We want to reset the component to its initial state in this function. It stops the interval timer by calling stopInterval() and also resets the total duration to 0. It's not important to reset the value of lastTickTiming because it will be set at the start of startTimer(), before the first interval callback is executed. Used by the "Reset" button.
 
-## toggleTimer
+### toggleTimer
 A function to toggle between calling stopInterval() and startTimer() depending on whether there's a current timer. Used by the time display and the "Start"/"Stop" button.
 
 ## Special Note
-Because the time digits are constantly being re-rendered via the updateTime() loop, the digits don't respond to clicks well. As a workaround, we add a persistent DOM element to cover the digits and ensure that all the clicks go through.
+Because the time digits are constantly being re-rendered via the renderTime() loop, the digits don't respond to clicks well. As a workaround, we add a persistent DOM element to cover the digits and ensure that all the clicks go through.
 
 ## Test Cases
   * Click the "Start" button to start the timer. Observe that:
