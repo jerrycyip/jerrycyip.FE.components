@@ -1,18 +1,17 @@
 body {
-  font-family: sans-serif;
   background-color: #fff;
+  font-family: sans-serif;
 }
 
 .tweet-list {
   display: flex;
   flex-direction: column;
   row-gap: 12px;
-  text-align: left;
 }
 
 .tweet {
   --spacing: 12px;
-  
+
   background-color: #fff;
   border: 1px solid #cfd9de;
   border-radius: 16px;
@@ -22,16 +21,16 @@ body {
   padding: var(--spacing);
 }
 
-.tweet-author-thumbnail {
-  --thumbnail-size: 48px;
-  
-  height: var(--thumbnail-size);
-  width: var(--thumbnail-size);
-  border-radius: var(--thumbnail-size); /* same result as 50% */
-}
-
 .tweet-top-row {
   margin-bottom: 2px;
+}
+
+.tweet-author-thumbnail {
+  --thumbnail-size: 48px;
+
+  border-radius: var(--thumbnail-size);
+  height: var(--thumbnail-size);
+  width: var(--thumbnail-size);
 }
 
 .tweet-author-name {
@@ -40,9 +39,7 @@ body {
 }
 
 .tweet-author-meta {
-  display: inline; /* added given div tags are block*/
   color: #71767b;
-  font-size: 15px;
   margin-left: 4px;
 }
 
@@ -50,26 +47,25 @@ body {
   color: #0f1419;
 }
 
-.tweet-actions{
- color: #536471;
- font-size: 13px;
- display: flex;
- justify-content: space-between;
- margin-top: var(--spacing);
- max-width: 425px;
+.tweet-actions {
+  color: #536471;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--spacing);
+  max-width: 425px;
 }
 
 .tweet-action {
-  display: flex;
   align-items: center;
+  display: flex;
   column-gap: var(--spacing);
 }
 
 .tweet-icon {
   --icon-size: 16px;
-  
-  fill: currentColor; /* match color w/ text */
+
+  fill: currentColor;
   height: var(--icon-size);
   width: var(--icon-size);
 }
-
