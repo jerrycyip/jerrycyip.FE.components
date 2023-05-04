@@ -2,19 +2,19 @@ const MIN = 0;
 const MAX = 100;
 
 export default function ProgressBar({value}) {
-  // handle invalid vals and convert them to be w/in range
-  const clampedValue = Math.min(Math.max(value, MIN), MAX);
-
+  //handle invalid vals and convert them to be w/in range  
+  const boundedValue = Math.min( MAX, Math.max(MIN, value));
+  
   return (
-    <div className="progress">
+    <div className="progress-bar-container">
       <div
         className="progress-bar"
-        style={{ width: `${clampedValue}%` }}
-        role ="progressbar"
-        aria-valuenow={clampedValue}
+        style={{ width: `${boundedValue}%`}}
+        role="progressbar"
+        aria-valuenow={boundedValue}
         aria-valuemin={MIN}
         aria-valuemax={MAX}>
-        {clampedValue}%
+      {boundedValue}%
       </div>
     </div>
   ); 

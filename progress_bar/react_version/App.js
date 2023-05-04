@@ -1,24 +1,37 @@
-/*
-Filling the bar proportionately to the progress (a number between 0-100, inclusive) can be 
-accomplished using the style attribute on React elements. Since the value is dynamic, we 
-cannot possibly write classes for it beforehand and we have to use inline styles.
-*/
-
+import { useState } from 'react';
 import ProgressBar from './ProgressBar';
 
 import './styles.css';
 
+const INIT_VALUE = 50;
+
 export default function App() {
+  const [ progressValue, setProgressValue ] = useState(INIT_VALUE);
+
+  function handleChange(newValue){
+    setProgressValue(newValue);
+  }
+
   return (
-    <div className="wrapper">
-      <ProgressBar value={0} />
-      <ProgressBar value={25} />
-      <ProgressBar value={50} />
-      <ProgressBar value={75} />
-      <ProgressBar value={100} />
-      <ProgressBar value={2} />
-      <ProgressBar value={-10} />
-      <ProgressBar value={120} />
+    <div className="progress-wrapper">
+        <ProgressBar value={20} />    
+        <ProgressBar value={80} />
+      <div>
+        <label for="slider-input">
+          Control Progress
+        </label>
+        <input
+          id="slider-input"
+          type="range"
+          min={0}
+          max={100}
+          value={progressValue}
+          onChange={(event) => {
+            handleChange(event.target.value)
+            }}/>
+      </div>
+        <ProgressBar value={progressValue} />
+
     </div>
   );
 }
