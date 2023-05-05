@@ -5,8 +5,8 @@ export default function App() {
   return (
     <div class="contact-form-wrapper">
       <form
-        // Ignore the onSubmit prop, it's used by GFE to
-        // intercept the form submit event to check your solution.
+        // Ignore the onSubmit prop, it's used only to
+        // intercept the form submit event to check the coding solution.
         onSubmit={submitForm}
         action="https://www.greatfrontend.com/api/questions/contact-form"
         method="post">
@@ -20,7 +20,7 @@ export default function App() {
         </div>
         <div>
           <label htmlFor="message-input">Message</label>
-          <textarea id="message-input" name="message" type="textbox"></textarea>
+          <textarea id="message-input" name="message"></textarea>
         </div>
         <div>
           <button type="submit">Submit</button>

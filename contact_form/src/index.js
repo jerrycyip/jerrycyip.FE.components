@@ -1,8 +1,19 @@
+// Can ignore script file, it is only used to intercept the form submission event for code validation.
 (() => {
-// Can ignore script file, it is only used to intercept the form submission event.
+  const URL = 'https://www.greatfrontend.com/api/questions/contact-form';
   const $form = document.querySelector('div.contact-form-wrapper > form');
   $form.addEventListener('submit', async (event) => {
      event.preventDefault();
+
+    if ($form.action !== URL) {
+      alert('Incorrect form action value');
+      return;
+    }
+
+    if ($form.method.toLowerCase() !== 'post') {
+      alert('Incorrect form method value');
+      return;
+    }     
 
     try {
       const formData = new FormData($form);
