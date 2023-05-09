@@ -45,7 +45,7 @@ export default function App() {
             }}
             />
           <label 
-            for="celsius-input" 
+            htmlFor="celsius-input" 
             className="temperature-converter-column"
             >
           Celsius
@@ -68,7 +68,7 @@ export default function App() {
             }}
             />
           <label 
-            for="celsius-input" 
+            htmlFor="fahrenheit-input" 
             className="temperature-converter-column"
             >
           Fahrenheit
