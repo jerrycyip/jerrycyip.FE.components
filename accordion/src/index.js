@@ -34,7 +34,7 @@
         function init(){
             // $ prefix convention for params/vars to indicate DOM elems and ensure familiar syntax with legacy jquery APIs
             $rootEl.classList.add('accordion');
-            const $accordionSections = document.createDocumentFragment();
+            const $accordionSections = document.createDocumentFragment(); // use doc fragment to minimize # of browser reflows to 1
             
             sections.forEach(({value, title, content}) => {
                 // create and style accordion section
@@ -51,7 +51,7 @@
                 // create and style accordion icon for expanding/collapsing
                 const $accordionIcon = document.createElement('span');
                 $accordionIcon.classList.add('accordion-icon');
-                $accordionIcon.setAttribute('aria-hidden', 'true');
+                $accordionIcon.setAttribute('aria-hidden', 'true'); // hide icons from a11y tools (screen readers)  
                 // attach title and icon to button
                 $accordionTitleBtn.append(title, $accordionIcon);
                 // create and style contents section for accordion section    
@@ -89,7 +89,7 @@
                 const $accordionContents = target.nextSibling;
                 $accordionContents.hidden = !$accordionContents.hidden;
             });
-        }
+        }   
     }
     
 })()
